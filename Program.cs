@@ -4,34 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PRACTICE1
+namespace PalindromePractice
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            info2 data = new info2();
-            int a = data.sample1(10, 30);
-            int b =data.sample2(40, 50);
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-       
-        }
-        class info1
-        {
-            public int sample1(int x , int y)
+            Console.WriteLine("Enter the Word:");
+            string word = Console.ReadLine();
+            string rev = "";
+            for(int i = word.Length-1; i>=0; i--)
             {
-                int z = x + y;
-                return z;
+                rev += word[i];
             }
-        }
-        class info2 : info1
-        {
-            public int sample2(int x , int y)
+            if(word == rev)
             {
-                int k = x + y;
-                return k;
+                Console.WriteLine($"The word {word} is palindrome {rev}");
             }
+            else
+            {
+                Console.WriteLine("Not palindrome");
+            }
+                Console.ReadKey();
+
         }
     }
 }
